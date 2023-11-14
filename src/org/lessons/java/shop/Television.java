@@ -50,7 +50,8 @@ public class Television extends Prodotto {
 		
 		return 	super.toString()
 				+ "\nSize: " + getSize()
-				+ "\nSmartTV: " + (isSmartTV()? "yes": "no") ;
+				+ "\nSmartTV: " + (isSmartTV()? "yes": "no")
+				+ "\n*----------*";
 	}
 	
 }

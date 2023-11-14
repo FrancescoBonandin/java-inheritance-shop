@@ -115,11 +115,23 @@ public class Carrello {
 			if (carrello[y] != null) {
 				
 				System.out.println(carrello[y].toString());
+				float unitCost = 0;
 				
 				if(fidelity) {
-					totalPrice += carrello[y].getPrezzoIvato(fidelity);
+					
+					unitCost = carrello[y].getPrezzoIvato(fidelity);
+					System.out.println("costo unitario + sconto " + String.format("%.02f", unitCost) + "\n*----------*");
 				}
-				else totalPrice += carrello[y].getPrezzoIvato();
+				
+				else {
+					
+					unitCost = carrello[y].getPrezzoIvato();
+					System.out.println("costo unitario " + String.format("%.02f", unitCost) + "\n*----------*");
+					
+				}
+				
+				totalPrice+=unitCost;
+				
 			}
 			
 		}

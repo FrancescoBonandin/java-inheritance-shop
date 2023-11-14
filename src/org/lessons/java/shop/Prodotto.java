@@ -124,13 +124,9 @@ public class Prodotto {
 			return "[" + getCodiceENome() + "] " + getNome() + "\n"
 					+ "prezzo: " + getPrezzo() + " --> " + getPrezzoIvato() + "\n"
 					+ "iva: " + ((int) getIva()) + "%\n"
-					+ "descrizione:\n" + getDescrizione();				
+					+ "descrizione:\n" + getDescrizione();	
+			
 		}
-		
-		
-	
-		
-		
 		
 		
 	}

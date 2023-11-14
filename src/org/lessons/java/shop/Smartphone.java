@@ -49,7 +49,8 @@ public class Smartphone extends Prodotto {
 			
 			return 	super.toString()
 					+ "\nimei: " + getImei()
-					+ "\nstorage: " + getStorageSize() ;
+					+ "\nstorage: " + getStorageSize()
+					+ "\n*----------*";
 		}
 	
 		

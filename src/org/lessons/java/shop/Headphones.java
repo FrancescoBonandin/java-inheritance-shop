@@ -48,7 +48,8 @@ public class Headphones extends Prodotto {
 		
 		return 	super.toString()
 				+ "\nSize: " + getColor()
-				+ "\nWireless or Wired: " + (isWired()? "wired": "wireless") ;
+				+ "\nWireless or Wired: " + (isWired()? "wired": "wireless")
+				+ "\n*----------*";
 	}
 	
 	
