@@ -7,11 +7,11 @@ public class Prodotto {
 		Random rnd = new Random();
 
 		
-		private int codice;
-		private String nome;
-		private String descrizione;
-		private float prezzo;
-		private int iva;
+		protected int codice;
+		protected String nome;
+		protected String descrizione;
+		protected float prezzo;
+		protected int iva;
 		
 		Prodotto( String nome, String descrizione, float prezzo, int iva){
 			
@@ -59,7 +59,7 @@ public class Prodotto {
 			return this.nome;
 		}
 		
-		public void setNome(String nome) {
+		protected void setNome(String nome) {
 			
 			this.nome = nome;
 		}
@@ -70,7 +70,7 @@ public class Prodotto {
 			return this.descrizione;
 		}
 		
-		public  void setDescrizione(String descrizione) {
+		protected  void setDescrizione(String descrizione) {
 			
 			this.descrizione = descrizione;
 		}
@@ -80,7 +80,7 @@ public class Prodotto {
 			return this.prezzo;
 		}
 		
-		public  void setPrezzo(float prezzo) {
+		protected  void setPrezzo(float prezzo) {
 			
 			this.prezzo = prezzo;
 		}
@@ -90,7 +90,7 @@ public class Prodotto {
 			return this.iva;
 		}
 		
-		public  void setIva(int iva) {
+		protected  void setIva(int iva) {
 			
 			this.iva = iva;
 		}
@@ -110,13 +110,15 @@ public class Prodotto {
 			return codiceENome;
 		}
 		
+		@Override
+		public String toString() {
+			
+			return "[" + getCodiceENome() + "] " + getNome() + "\n"
+					+ "prezzo: " + getPrezzo() + " --> " + getPrezzoIvato() + "\n"
+					+ "iva: " + ((int) getIva()) + "%\n"
+					+ "descrizione:\n" + getDescrizione();				
+		}
+		
+		
 		
 	}
-
-
-git init
-git add -A
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/FrancescoBonandin/java-inheritance-shop.git
-git push -u origin main

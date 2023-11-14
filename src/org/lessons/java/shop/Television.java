@@ -30,4 +30,13 @@ public class Television extends Prodotto {
 		this.smartTV = smartTV;
 	}
 	
+
+	@Override
+	public String toString() {
+		
+		return 	super.toString()
+				+ "\nSize: " + getSize()
+				+ "\nSmartTV: " + (isSmartTV()? "yes": "no") ;
+	}
+	
 }

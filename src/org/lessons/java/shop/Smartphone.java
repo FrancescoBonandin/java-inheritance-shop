@@ -10,7 +10,7 @@ public class Smartphone extends Prodotto {
 			
 			super(nome, descrizione, prezzo, iva);
 			setImei(imei);
-			setMemory(storageSize);
+			setStorageSize(storageSize);
 			
 		}
 
@@ -22,12 +22,20 @@ public class Smartphone extends Prodotto {
 			this.imei = imei;
 		}
 
-		public int getMemory() {
+		public int getStorageSize() {
 			return storageSize;
 		}
 
-		public void setMemory(int storageSize) {
+		private void setStorageSize(int storageSize) {
 			this.storageSize = storageSize;
+		}
+		
+		@Override
+		public String toString() {
+			
+			return 	super.toString()
+					+ "\nimei: " + getImei()
+					+ "\nstorage: " + getStorageSize() ;
 		}
 	
 		
