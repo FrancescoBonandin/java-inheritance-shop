@@ -31,6 +31,20 @@ public class Smartphone extends Prodotto {
 		}
 		
 		@Override
+		
+		public float getPrezzoIvato (boolean fidelity) {
+			
+			if(this.storageSize <32) {
+				
+				float discountedPrice = (float) super.getPrezzoIvato()/100*(100-5);
+				return discountedPrice;
+			}
+			
+			else return super.getPrezzoIvato(fidelity);
+			
+		}
+		
+		@Override
 		public String toString() {
 			
 			return 	super.toString()

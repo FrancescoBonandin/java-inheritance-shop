@@ -30,6 +30,20 @@ public class Television extends Prodotto {
 		this.smartTV = smartTV;
 	}
 	
+	
+	@Override
+	public float getPrezzoIvato (boolean fidelity) {
+		
+		if(!isSmartTV()) {
+			
+			float discountedPrice = (float) super.getPrezzoIvato()/100*(100-10);
+			return discountedPrice;
+		}
+		
+		else return super.getPrezzoIvato(fidelity);
+		
+	}
+	
 
 	@Override
 	public String toString() {

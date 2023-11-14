@@ -103,12 +103,20 @@ public class Prodotto {
 			
 		}
 		
+		public float getPrezzoIvato (boolean fidelity) {
+			
+			float discountedPrice = (float) getPrezzoIvato() /100 *(100-2);
+			return discountedPrice;
+			
+		}
+		
 		public String getCodiceENome() {
 			
 			String codiceENome = String.valueOf(this.codice) + "-" + this.nome;
 			
 			return codiceENome;
 		}
+		
 		
 		@Override
 		public String toString() {
@@ -118,6 +126,10 @@ public class Prodotto {
 					+ "iva: " + ((int) getIva()) + "%\n"
 					+ "descrizione:\n" + getDescrizione();				
 		}
+		
+		
+	
+		
 		
 		
 		

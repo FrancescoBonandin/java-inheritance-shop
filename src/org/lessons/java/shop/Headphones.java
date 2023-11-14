@@ -31,6 +31,19 @@ public class Headphones extends Prodotto {
 	}
 	
 	@Override
+	public float getPrezzoIvato (boolean fidelity) {
+		
+		if(isWired()) {
+			
+			float discountedPrice = (float) super.getPrezzoIvato()/100*(100-7);
+			return discountedPrice;
+		}
+		
+		else return super.getPrezzoIvato(fidelity);
+		
+	}
+	
+	@Override
 	public String toString() {
 		
 		return 	super.toString()

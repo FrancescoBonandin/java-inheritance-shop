@@ -13,7 +13,13 @@ public class Carrello {
 		
 		Prodotto[] carrello = new Prodotto[100];
 		
+		float totalPrice = 0f;
+		
 		int x = 0;
+		
+		System.out.println("hai la carta fedeltà? (y/n)");
+		String strFidelity = in.nextLine();
+		boolean fidelity=strFidelity.toLowerCase().equals("y")? true : false;
 		
 		
 		do{
@@ -101,7 +107,7 @@ public class Carrello {
 		stop = keepGoing.toLowerCase().equals("y")? false : true;
 		
 		}while(!stop && carrello.length > x);
-		
+
 		in.close();
 		
 		for(int y = 0; y<carrello.length;y++) {
@@ -109,8 +115,15 @@ public class Carrello {
 			if (carrello[y] != null) {
 				
 				System.out.println(carrello[y].toString());
+				
+				if(fidelity) {
+					totalPrice += carrello[y].getPrezzoIvato(fidelity);
+				}
+				else totalPrice += carrello[y].getPrezzoIvato();
 			}
+			
 		}
+		System.out.println("il totale è :" + String.format("%.02f", totalPrice));
 	}
 	
 
